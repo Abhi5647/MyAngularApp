@@ -7,24 +7,26 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {HttpClientModule} from '@angular/common/http';
-import { MainCompComponent } from './main-comp/main-comp.component';
-import { ProfileComponent } from './profile/profile.component'
+import { MainComponent } from './main/main.component';
+import { ProfileDataService } from './services/profile-data.service';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    MainCompComponent,
-    ProfileComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [ProfileDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

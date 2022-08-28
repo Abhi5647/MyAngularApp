@@ -15,7 +15,7 @@ export class AuthServiceService {
 
   login(data:any):Observable<any>{
     let headers={
-      'Authorization':'Bearer'+ localStorage.getItem('token')
+      'Authorization':'Bearer'+" "+ localStorage.getItem('token')
     }
    return this.http.post('http://localhost:3000/login',data )
   }
@@ -24,7 +24,7 @@ export class AuthServiceService {
   
   mongoDb():Observable<any>{
     let headers={
-      'Authorization':'Bearer'+ localStorage.getItem('token')
+      'Authorization':'Bearer'+" " +localStorage.getItem('token')
     }
     return this.http.get('http://localhost:3000/main', {headers:headers})
   }

@@ -1,0 +1,21 @@
+#navbar{
+    opacity: 80%;
+    position: fixed;
+}
+#logout{
+    justify-content: end;
+    background-color: brown;
+}
+#welcome{
+    background-image: -moz-linear-gradient();
+    background-color:darkgreen;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }

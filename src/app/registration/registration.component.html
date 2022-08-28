@@ -3,42 +3,69 @@
         <div class="col-3"></div>
         <div class="col-5">
             <h2 class="text-white mt-3 mb-5">Registration Page</h2>
-            <div *ngIf="isRegistered" class="bg-success border-dotted rounded">Account Has been Created!! Login Now</div>
+            <div *ngIf="isRegistered" class="bg-success border-dotted rounded">Account Has been Created!! Login Now
+            </div>
             <form action="" [formGroup]="dataVar" (ngSubmit)="OnSubmit()">
                 <div class="form-group mb-3 ">
                     <label for="fname" class="text-white ">First Name</label>
-                    <input type="text"  class="form-control mb-3 " id="fname" aria-describedby="emailHelp" placeholder="Enter Name" formControlName="firstName">
-                    <span  *ngIf="dataVar.get('firstName')?.hasError('required')&&dataVar.get('firstName')?.touched" class="form-text text-danger ">*FirstName is required </span>
-                    <span  *ngIf="f['firstName'].getError('minlength')!=null" class="text-danger"> minimum 4 length is required</span>
-                    <span  *ngIf="f['firstName'].getError('maxlength')!=null" class="text-danger"> maximum 10 length is required</span>
+                    <input type="text" class="form-control mb-3 " id="fname" aria-describedby="emailHelp"
+                        placeholder="Enter Name" formControlName="firstName">
+                    <span *ngIf="dataVar.get('firstName')?.hasError('required')&&dataVar.get('firstName')?.touched"
+                        class="form-text text-danger ">*FirstName is required </span>
+                    <span *ngIf="f['firstName'].getError('minlength')!=null" class="text-danger"> minimum 4 length is
+                        required</span>
+                    <span *ngIf="f['firstName'].getError('maxlength')!=null" class="text-danger"> maximum 10 length is
+                        required</span>
                 </div>
                 <div class="form-group text-white">
                     <label for="exampleInputPassword1">Last Name</label>
-                    <input type="text" class="form-control mb-3" id="exampleInputPassword1" placeholder="Last Name" formControlName="lastName">
-                    <span  *ngIf="dataVar.get('lastName')?.hasError('required')&&dataVar.get('lastName')?.touched" class="form-text text-danger ">*LastName is required </span>
+                    <input type="text" class="form-control mb-3" id="exampleInputPassword1" placeholder="Last Name"
+                        formControlName="lastName">
+                    <span *ngIf="dataVar.get('lastName')?.hasError('required')&&dataVar.get('lastName')?.touched"
+                        class="form-text text-danger ">*LastName is required </span>
                 </div>
                 <div class="form-group text-white">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="text" class="form-control mb-3" id="exampleInputPassword1" placeholder="Email" formControlName="email">
-                    <span  *ngIf="dataVar.get('email')?.hasError('required')&&dataVar.get('email')?.touched" class="form-text text-danger ">*Email is required </span>
+                    <input type="text" class="form-control mb-3" id="exampleInputPassword1" placeholder="Email"
+                        formControlName="email">
+                    <span *ngIf="dataVar.get('email')?.hasError('required')&&dataVar.get('email')?.touched"
+                        class="form-text text-danger ">*Email is required </span>
+                </div >
+                <div>
+                   <label for="" class="text-white">Gender</label>
+                    <div class="dropdown text-dark mb-3 rounded p-2 mt-1 bg-white">
+                        <label> Select Gender :  </label>
+                        <select formControlName="gender" class="test-dark p-1 rounded ms-3 ">
+                            <option value="male"> Male
+                            </option>
+                            <option value="female"> Female
+                            </option>
+                            
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group text-white">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="Password" formControlName="password">
-                    <span  *ngIf="dataVar.get('password')?.hasError('required')&&dataVar.get('password')?.touched" class="form-text text-danger ">*password is required </span>
+                    <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="Password"
+                        formControlName="password">
+                    <span *ngIf="dataVar.get('password')?.hasError('required')&&dataVar.get('password')?.touched"
+                        class="form-text text-danger ">*password is required </span>
                 </div>
                 <div class="form-group text-white">
                     <label for="exampleInputPassword1">Verify Password</label>
-                    <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="Enter Password again" formControlName="vpassword">
-                    <span  *ngIf="dataVar.get('vpassword')?.hasError('confirmPasswordValidator')" class="form-text text-danger ">*password unmatched </span>
+                    <input type="password" class="form-control mb-3" id="exampleInputPassword1"
+                        placeholder="Enter Password again" formControlName="vpassword">
+                    <span *ngIf="dataVar.get('vpassword')?.hasError('confirmPasswordValidator')"
+                        class="form-text text-danger ">*password unmatched </span>
                     <!-- <span class="form-text text-danger ">*password mismatch </span> -->
-                    
+
                 </div>
                 <div class=" text-danger mb-4 p-3">
-                    
-                    <label class="form-check-label  bg-white" for="exampleCheck1" formControlName="cheak">* You are to put dummy data here</label>
+
+                    <label class="form-check-label rounded bg-white" for="exampleCheck1" formControlName="cheak">* You are to
+                        put dummy data here</label>
                 </div>
-                <button type="submit" [disabled]="!dataVar.valid" class="btn btn-primary mt-2" >Submit</button>
+                <button type="submit" [disabled]="!dataVar.valid" class="btn btn-primary mt-2">Submit</button>
             </form>
         </div>
         <div class="col-2"></div>

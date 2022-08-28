@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 dataVar=this.formBuilder.group({
- email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
- password:['',[Validators.required,Validators.minLength(8)]  ]
+ email:['myselfabhi55@gmail.com',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+ password:['Vishal@123',[Validators.required,Validators.minLength(8)]  ]
 })
 OnSubmit( ){
   const data=this.dataVar.value;
@@ -25,7 +25,8 @@ OnSubmit( ){
     res=>{
       if(res.success){
         localStorage.setItem('token', res.token)
-        alert("Login Successful")
+        alert("Login Successful");
+        this.router.navigate(['/main/profile'])
       }else{
         alert(res.message)
       }

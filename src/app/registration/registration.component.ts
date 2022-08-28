@@ -9,7 +9,7 @@ import { AuthServiceService } from '../services/auth-service.service'
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
+  gender:any=["male","female"];
   dataVar:any
   alreadyCreated="account Already Created"
   isRegistered: boolean|null=false;
@@ -19,6 +19,7 @@ export class RegistrationComponent implements OnInit {
       firstName:['', [Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(10)])]],
       lastName:['', [Validators.required, Validators.minLength(4)]],
       email:['', [Validators.required ,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+      gender:['male',[Validators.required]],
       password:['', [Validators.required, Validators.minLength(8)]],
       vpassword:['',[Validators.required, Validators.minLength(8)]],   
    }, {
